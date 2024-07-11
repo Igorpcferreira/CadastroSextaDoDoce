@@ -1,4 +1,4 @@
-package br.com.application.cadastro.funcionario.dominio;
+package br.com.application.cadastro.funcionario.dominio.entidade;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,9 +12,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Funcionario {
 
-    private long id;
+    @Setter
+    private Long id;
 
     @Setter
     private String nome;
+
+    public Funcionario(Long id) {
+        this.id = id;
+    }
 
 }
