@@ -14,4 +14,15 @@ public interface FuncionarioDataRepository extends JpaRepository<FuncionarioData
         "from FuncionarioData funcionario " +
         "where funcionario.nome = ?1 ")
     boolean nomeFuncionarioJaCadastrado(String nome);
+
+    @Query("select case when count(funcionario.id) > 0 then true else false end " +
+        "from FuncionarioData funcionario " +
+        "where funcionario.nome = ?1 and funcionario.id <> ?2")
+    boolean nomeFuncionarioJaCadastradoNotMe(String nome, Long id);
+
+
+    @Query("select case when count(funcionario.id) > 0 then true else false end " +
+        "from FuncionarioData funcionario " +
+        "where funcionario.dataNotificacao = ?1")
+    boolean dataNotificacaoFuncionarioJaCadastrado(String dataCriacao);
 }

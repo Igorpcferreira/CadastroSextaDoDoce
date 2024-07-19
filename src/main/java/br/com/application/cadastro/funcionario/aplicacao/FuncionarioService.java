@@ -37,4 +37,12 @@ public class FuncionarioService {
     public boolean nomeFuncionarioJaCadastrado(Funcionario funcionario) {
         return funcionarioRepository.nomeFuncionarioJaCadastrado(funcionario);
     }
+
+    public boolean nomeFuncionarioJaCadastradoNotMe(Funcionario funcionario) {
+        return funcionarioRepository.nomeFuncionarioJaCadastradoNotMe(funcionario);
+    }
+
+    public boolean dataNotificacaoFuncionarioJaCadastrado(Funcionario funcionario) {
+        return funcionarioRepository.dataNotificacaoFuncionarioJaCadastrado(funcionario);
+    }
 }

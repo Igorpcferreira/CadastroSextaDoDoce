@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.application.cadastro.funcionario.dominio.entidade.Funcionario;
 import br.com.application.cadastro.funcionario.infra.FuncionarioDataRepository;
-import br.com.application.cadastro.funcionario.infra.FuncionarioMapper;
+import br.com.application.cadastro.funcionario.FuncionarioMapper;
 import br.com.application.cadastro.funcionario.infra.data.FuncionarioData;
 import br.com.application.cadastro.funcionario.repository.FuncionarioRepository;
 import br.com.application.core.BaseMapper;
@@ -48,6 +48,17 @@ public class FuncionarioRepositoryImpl extends BaseRepositoryImpl<Funcionario, F
     @Override
     public boolean nomeFuncionarioJaCadastrado(Funcionario funcionario) {
         return funcionarioDataRepository.nomeFuncionarioJaCadastrado(funcionarioMapper.toData(funcionario).getNome());
+    }
+
+    @Override
+    public boolean nomeFuncionarioJaCadastradoNotMe(Funcionario funcionario) {
+        return funcionarioDataRepository.nomeFuncionarioJaCadastradoNotMe(funcionarioMapper.toData(funcionario).getNome(), funcionario.getId());
+    }
+
+    @Override
+    public boolean dataNotificacaoFuncionarioJaCadastrado(Funcionario funcionario) {
+        //return funcionarioDataRepository.dataNotificacaoFuncionarioJaCadastrado(funcionarioMapper.toData(funcionario).getDataCriacao());
+        return Boolean.parseBoolean(null);
     }
 
 }

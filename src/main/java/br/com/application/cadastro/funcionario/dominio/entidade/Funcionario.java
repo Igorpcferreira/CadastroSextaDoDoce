@@ -1,5 +1,8 @@
 package br.com.application.cadastro.funcionario.dominio.entidade;
 
+import java.time.LocalDate;
+
+import br.com.application.cadastro.email.dominio.entidade.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +20,10 @@ public class Funcionario {
 
     @Setter
     private String nome;
+
+    private Email email;
+
+    private LocalDate dataNotificacao;
 
     public Funcionario(Long id) {
         this.id = id;

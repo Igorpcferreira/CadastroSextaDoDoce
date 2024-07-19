@@ -55,6 +55,7 @@ public class FuncionarioController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Long> alterar(@RequestBody @Valid FuncionarioDto funcionarioDto) {
         Funcionario domain = funcionarioDto.toEntity();
+        if (domain.getId() == null) domain.setId(funcionarioDto.getId());
         return ResponseEntity.ok(alterarFuncionarioRegras.execute(domain).getId());
     }
 
