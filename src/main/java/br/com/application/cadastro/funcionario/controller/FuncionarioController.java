@@ -21,7 +21,7 @@ import br.com.application.cadastro.funcionario.dominio.entidade.Funcionario;
 import br.com.application.cadastro.funcionario.dominio.regras.AlterarFuncionarioRegras;
 import br.com.application.cadastro.funcionario.dominio.regras.ExcluirFuncionarioRegras;
 import br.com.application.cadastro.funcionario.dominio.regras.IncluirFuncionarioRegras;
-import br.com.application.cadastro.funcionario.dto.FuncionarioDto;
+import br.com.application.cadastro.funcionario.infra.dto.FuncionarioDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 

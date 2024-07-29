@@ -15,10 +15,10 @@ public class Email {
     private Long id;
 
     @Setter
-    private String email;
+    private String destinatario;
 
-    public Email(String email) {
-        this.email = email;
+    public Email(String destinatario) {
+        this.destinatario = destinatario;
     }
 
 }

@@ -23,7 +23,7 @@ public class Funcionario {
 
     private Email email;
 
-    private LocalDate dataNotificacao;
+    private LocalDate dataResponsavelDoce;
 
     public Funcionario(Long id) {
         this.id = id;

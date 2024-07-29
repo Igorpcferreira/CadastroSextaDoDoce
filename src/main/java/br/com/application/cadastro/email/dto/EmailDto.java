@@ -11,12 +11,12 @@ import lombok.Data;
 public class EmailDto {
 
     private Long id;
-    private String email;
+    private String destinatario;
 
     public Email toEntity() {
         return Email.builder()
                 .id(id)
-                .email(email)
+                .destinatario(destinatario)
                 .build();
     }
 }

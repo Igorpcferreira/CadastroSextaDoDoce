@@ -16,7 +16,7 @@ public class EmailMapper extends BaseMapper<Email, EmailData>{
 
         return Email.builder()
             .id(emailData.getId())
-            .email(emailData.getEmail())
+            .destinatario(emailData.getDestinatario())
             .build();
     }
 
@@ -26,7 +26,7 @@ public class EmailMapper extends BaseMapper<Email, EmailData>{
 
         return EmailData.builder()
             .id(email.getId())
-            .email(email.getEmail())
+            .destinatario(email.getDestinatario())
             .build();
     }
 }

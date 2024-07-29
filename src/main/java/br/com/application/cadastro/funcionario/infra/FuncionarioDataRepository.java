@@ -1,5 +1,7 @@
 package br.com.application.cadastro.funcionario.infra;
 
+import java.time.LocalDate;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
@@ -22,7 +24,7 @@ public interface FuncionarioDataRepository extends JpaRepository<FuncionarioData
 
 
     @Query("select case when count(funcionario.id) > 0 then true else false end " +
-        "from FuncionarioData funcionario " +
-        "where funcionario.dataNotificacao = ?1")
-    boolean dataNotificacaoFuncionarioJaCadastrado(String dataCriacao);
+            "from FuncionarioData funcionario " +
+            "where funcionario.dataResponsavelDoce = ?1")
+    boolean dataResponsavelDoceJaCadastrado(LocalDate dataCriacao);
 }

@@ -37,6 +37,6 @@ public class FuncionarioData {
     @JoinColumn(name = "id_email")
     private EmailData email;
 
-    @Column(name = "data_notificacao", nullable = false)
-    private LocalDate dataNotificacao;
+    @Column(name = "data_responsavel_doce", nullable = false)
+    private LocalDate dataResponsavelDoce;
 }

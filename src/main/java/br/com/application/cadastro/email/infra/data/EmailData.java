@@ -24,7 +24,7 @@ public class EmailData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email_funcionario")
-    private String email;
+    @Column(name = "destinatario_email_funcionario")
+    private String destinatario;
 
 }

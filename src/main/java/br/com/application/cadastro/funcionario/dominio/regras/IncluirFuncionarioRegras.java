@@ -1,9 +1,9 @@
 package br.com.application.cadastro.funcionario.dominio.regras;
 
-import javax.inject.Named;
-
 import java.time.LocalDate;
 import java.util.Optional;
+
+import javax.inject.Named;
 
 import br.com.application.cadastro.email.dominio.entidade.Email;
 import br.com.application.cadastro.email.dominio.enums.EmailEnum;
@@ -30,8 +30,8 @@ public class IncluirFuncionarioRegras implements Regras<Funcionario> {
         validarTamanhoNome(funcionario.getNome());
         validarEmailNulo(funcionario.getEmail());
         validarFormatoEmail(funcionario.getEmail());
-        validarDataCriacaoNula(funcionario.getDataNotificacao());
-        validarDataNotificacaoFuncionarioJaCadastrado(funcionario);
+        validarDataResponsavelDoceNula(funcionario.getDataResponsavelDoce());
+        validarDataResponsavelDoceJaCadastrado(funcionario);
         tratarNomeComEspacosEmBranco(funcionario);
         validarNomeFuncionarioJaCadastrado(funcionario);
     }
@@ -53,18 +53,18 @@ public class IncluirFuncionarioRegras implements Regras<Funcionario> {
     }
 
     private void validarFormatoEmail(Email email) {
-        if (!email.getEmail().matches(EmailEnum.EMAIL_MASCARA_REGEX.getRegex())) {
+        if (!email.getDestinatario().matches(EmailEnum.EMAIL_MASCARA_REGEX.getValor())) {
             throw new IllegalArgumentException("O formato do email é inválido");
         }
     }
 
-    private void validarDataCriacaoNula(LocalDate dataCriacao) {
+    private void validarDataResponsavelDoceNula(LocalDate dataCriacao) {
         Optional.ofNullable(dataCriacao)
-                .orElseThrow(() -> new IllegalArgumentException("Data de criação do funcionário não pode ser nula"));
+                .orElseThrow(() -> new IllegalArgumentException("Data responsável pelo doce não pode ser nula"));
     }
 
-    private void validarDataNotificacaoFuncionarioJaCadastrado(Funcionario funcionario) {
-        if (funcionarioService.dataNotificacaoFuncionarioJaCadastrado(funcionario)) {
+    private void validarDataResponsavelDoceJaCadastrado(Funcionario funcionario) {
+        if (funcionarioService.dataResponsavelDoceJaCadastrado(funcionario)) {
             throw new IllegalArgumentException("Data de criação do funcionário já cadastrada");
         }
     }

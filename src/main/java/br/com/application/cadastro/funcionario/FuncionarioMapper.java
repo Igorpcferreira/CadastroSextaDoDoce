@@ -22,7 +22,7 @@ public class FuncionarioMapper extends BaseMapper<Funcionario, FuncionarioData> 
                 .id(funcionarioData.getId())
                 .nome(funcionarioData.getNome())
                 .email(emailMapper.toDomain(funcionarioData.getEmail()))
-                //.dataCriacao(funcionarioData.getDataNotificacao())
+                .dataResponsavelDoce(funcionarioData.getDataResponsavelDoce())
                 .build();
     }
 
@@ -34,6 +34,7 @@ public class FuncionarioMapper extends BaseMapper<Funcionario, FuncionarioData> 
                 .id(funcionario.getId())
                 .nome(funcionario.getNome())
                 .email(emailMapper.toData(funcionario.getEmail()))
+                .dataResponsavelDoce(funcionario.getDataResponsavelDoce())
                 .build();
     }
 }

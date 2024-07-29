@@ -1,6 +1,5 @@
 package br.com.application.cadastro.funcionario.dominio.regras;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.inject.Named;
@@ -51,7 +50,7 @@ public class AlterarFuncionarioRegras implements Regras<Funcionario>{
     }
 
     private void validarFormatoEmail(Email email) {
-        if (!email.getEmail().matches(EmailEnum.EMAIL_MASCARA_REGEX.getRegex())) {
+        if (!email.getDestinatario().matches(EmailEnum.EMAIL_MASCARA_REGEX.getValor())) {
             throw new IllegalArgumentException("O formato do email é inválido");
         }
     }

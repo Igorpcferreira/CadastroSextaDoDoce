@@ -19,6 +19,6 @@ public interface FuncionarioRepository extends BaseRepository<Funcionario, Funci
 
     boolean nomeFuncionarioJaCadastradoNotMe(Funcionario funcionario);
 
-    boolean dataNotificacaoFuncionarioJaCadastrado(Funcionario funcionario);
+    boolean dataResponsavelDoceJaCadastrado(Funcionario funcionario);
 
 }
